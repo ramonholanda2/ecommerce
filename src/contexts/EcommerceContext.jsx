@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import firebase from 'firebase';
 import { db, auth } from '../api/firebase';
 
 export const EcommerceContext = createContext();
