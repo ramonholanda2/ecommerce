@@ -1,0 +1,10 @@
+.products {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 20rem);
+}
+.loading {
+    position: absolute;
+    top: 20vh;
+    left: 46vw;
+}
