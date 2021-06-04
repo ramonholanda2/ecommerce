@@ -15,5 +15,5 @@ export const db = firebaseApp.firestore();
 export const auth = firebaseApp.auth();
     
 export function loginWithGoogle() {
-    auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
 }
