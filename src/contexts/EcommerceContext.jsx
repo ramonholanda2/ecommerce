@@ -152,6 +152,16 @@ export const EcommerceContextProvider = ({ children }) => {
       setLoading(false);
       setRenderErrorLogin(null);
     });
+    
+    // pega dados dos produtos
+    db.collection("products").onSnapshot((snapshot) => {
+      setProducts(
+        snapshot.docs.map((doc) => ({
+          data: doc.data(),
+          id: doc.id,
+        }))
+      );
+    });
 
     // pega dados dos produtos
     db.collection("products").onSnapshot((snapshot) => {
@@ -163,6 +173,9 @@ export const EcommerceContextProvider = ({ children }) => {
       );
     });
 
+  }, [])
+  
+  useEffect(() => {
     // pega dados dos produtos no carrinho
     if (user) {
       db.collection("cart")
