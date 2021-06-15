@@ -8,29 +8,29 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-evenly;
 
         border-radius: 8px;
         border: 3px solid #a57e00;
+        -webkit-box-shadow: -11px 9px 23px 4px rgba(165,126,0,0.29); 
+        box-shadow: -11px 9px 45px 4px rgba(165,126,0,0.29);    
         
-        height: 30rem;
         width: 30rem;
+        height: 30rem;
+        max-width: 30rem;
         
-        .loginEmail {
+        .loginEmailAndPassword {
             display: flex;
             flex-direction: column;
+            align-items: center;
 
-            span {
+            p {
+                color: red;
                 font-weight: 600;
-                font-size: 1.1rem;
-                margin-bottom: 3px;
-
-                &:nth-of-type(2) {
-                    margin-top: 1rem;
-                }
             }
+
             input {
-                width: 20rem;
+                width: 21rem;
                 height: 2rem;
                 font-size: 1.2rem;
                 padding-left: 5px;
@@ -40,54 +40,156 @@
                     outline: 2px solid orange;
                 }
             }
-        }
-        .createAccount {
-            display: flex;
-
-            button {
-                background: #ffa600b0;
-                border: none;
-                padding: 2px 8px;
-                border-radius: 5px;
+            span {
                 font-weight: 600;
+                font-size: 1.1rem;
+                margin-bottom: 3px;
 
-                &:hover {
-                    cursor: pointer;
+                &:nth-of-type(2) {
+                    margin-top: 1rem;
                 }
             }
-            p {
-                margin-left: 0.5rem;
-            }
-            .border {
-                border-bottom: 2px solid  #a36a00;
-                width: 6rem;
-                margin: 0 1rem;
-                margin-bottom: 8px;
-            }
-        }
-        .loginAccount {
-            display: flex;
-            flex-direction: column;
 
-            button {
+            .email,
+            .password {
+                display: flex;
+                flex-direction: column;
+            }
+            .email {
+                margin-bottom: 1rem;
+            }
+
+            .btnLogin {
+                padding: .2rem 7rem;
+                font-size: 1rem;
+                font-weight: 600;
+                margin-top: 1.5rem;
+                border-radius: 7px;
+                border: 2px solid #7a5000;
+                background-color: orange;
+
+                transition: filter ease-in .2s;
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(90%);
+                }
+            }
+
+            .loginInpts{
+                display: flex;
+                flex-direction: column;
+                
+                .name {
+                    display: flex;
+                    margin-bottom: 1rem;
+
+                    
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        &:first-child {
+                            margin-right: 1rem;
+                        }
+                        
+                        input {
+                            width: 10rem;
+                        }
+                    }
+                }
+            }
+            .loginButtons {
                 display: flex;
                 align-items: center;
-                padding: 0.3rem 2rem;
-                
-                border: 3px solid #ffa600;
-                border-radius: 8px;
-                font-size: 1.3rem;
+                justify-content: center;
+                margin-top: 2rem;
+                margin-bottom: 1.1rem;
 
-                
-                span {
-                    margin-left: 1rem;
+                button {
+                    padding: .25rem 3.4rem;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    border: 2px solid #000000;
+                    border-radius: 6px;
+                    transition: background-color 0.3s ease-out;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    
+                    &:first-child {
+                        background-color: #d68c01;
+                        margin-right: 1rem;
+                        &:hover {
+                            background-color: #ffa500;
+                        }
+                    }
+                    &:last-child {
+                        background-color: #e2c20b;
+                        &:hover {
+                            background-color: #ffa500;
+                        }
+                    }
                 }
-                &:hover {
-                    cursor: pointer;
-                }
+            } 
+        }
+        .loginOptions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-                &:nth-of-type(1) {
-                    margin-bottom: 0.5rem;
+            .createAccount {
+                display: flex;
+                margin: 1.8rem 0;
+                
+                button {
+                    background: #ffa600b0;
+                    border: none;
+                    padding: 2px 8px;
+                    border-radius: 5px;
+                    font-weight: 600;
+    
+                    &:hover {
+                        cursor: pointer;
+                        background-color: orange;
+                    }
+                }
+                p {
+                    margin-left: 0.5rem;
+                }
+                .border {
+                    border-bottom: 2px solid  #a36a00;
+                    width: 6rem;
+                    margin: 0 1rem;
+                    margin-bottom: 8px;
+                }
+            }
+            .loginAccount {
+                display: flex;
+                flex-direction: column;
+    
+                button {
+                    display: flex;
+                    align-items: center;
+                    padding: 0.3rem 3.6rem;
+                    
+                    border: 3px solid #ffa600;
+                    border-radius: 8px;
+                    font-size: 1.3rem;
+                    transition: background-color 0.2s ease-in-out;
+                    
+                    span {
+                        margin-left: 1rem;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgb(255, 186, 58);
+                    }
+    
+                    &:nth-of-type(1) {
+                        margin-bottom: 0.5rem;
+                    }
                 }
             }
         }

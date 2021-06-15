@@ -3,8 +3,39 @@
     justify-content: center;
     grid-template-columns: repeat(3, 20rem);
 }
+
+.productDetails {
+    display: grid;
+    justify-content: flex-end;
+    grid-template-columns: 30vw;
+}
+
 .loading {
     position: absolute;
     top: 20vh;
     left: 46vw;
+}
+
+@media(max-width: 970px) {
+    .products {
+        grid-template-columns: repeat(2, 20rem);
+    }
+}
+
+@media(max-width: 650px) {
+    .products {
+        grid-template-columns: repeat(2, 18rem);
+    }
+}
+
+@media(max-width: 580px) {
+    .products {
+        grid-template-columns: 23rem;
+    }
+}
+
+@media(max-width: 400px) {
+    .products {
+        grid-template-columns: 19rem;
+    }
 }

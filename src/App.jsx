@@ -3,12 +3,14 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { EcommerceContextProvider } from "./contexts/EcommerceContext";
-import Header from "./components/Header/Header";
 
+import Header from "./components/Header/Header";
 import Products from "./components/Products/Products";
 import Login from './components/Login/Login';
-import "./App.css";
+import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer';
 
+import "./App.css";
 
 const app = () => {
   return (
@@ -18,9 +20,14 @@ const app = () => {
             <Route exact path='/'>
                 <Header />
                 <Products />
+                <Footer />
             </Route>
             <Route path='/login'>
                 <Login />
+            </Route>
+            <Route path='/cart'>
+                <Header />
+                <Cart />
             </Route>
         </EcommerceContextProvider>
       </Switch>

@@ -1,36 +1,49 @@
-import React, { useEffect } from 'react';
-import { useEcommerceContext } from '../../contexts/EcommerceContext';
-import { useHistory } from 'react-router-dom';
-import Product from './Product/Product'
-import styles from './Products.module.scss';
-import { auth } from '../../api/firebase';
+import React, { useEffect } from "react";
+import { useEcommerceContext } from "../../contexts/EcommerceContext";
+import { useHistory } from "react-router-dom";
+import ProductDetails from './ProductDetails/ProductDetails';
+import Product from "./Product/Product";
+import styles from "./Products.module.scss";
 
 const Products = () => {
-    const { products, user, loading } = useEcommerceContext();
-    const history = useHistory();
+  const { products, searchProducts, loading, user, productDetailsBool } = useEcommerceContext();
+  const history = useHistory();
 
-    function logout() {
-        auth.signOut();
-        history.push('/login')
+  useEffect(() => {
+
+  }, []);
+
+  useEffect(() => {
+    if (!user && !loading) {
+      history.push("/login");
     }
+  }, [history, loading, user]);
 
-    useEffect(() => {
-        console.log(user)
-        if(!user && !loading) {
-            history.push('/login');
-        }
-    }, [history, loading, user])
 
-    if(!products) return <img className={styles.loading} src="/imgs/loading.gif" alt="Loading..." /> 
-
+  if (!products)
     return (
-        <div className={styles.products}>
-            {products.map((product) => (
-                <Product key={product.id} product={product} />
-            ))}
-            <h1 onClick={logout}>sair</h1>
-        </div>
-    )
-}
+      <img
+        className={styles.loading}
+        src="/imgs/loading.gif"
+        alt="Loading..."
+      />
+    );
 
-export default Products
+  return (
+    <div className={productDetailsBool ? styles.productDetails : styles.products}>
+      {productDetailsBool && <ProductDetails />}
+
+      {searchProducts.length !== 0 ? (
+        searchProducts.map(product => (
+          <Product key={product.id} product={product} />
+        ))
+      ) : (
+        products.map((product) => (
+          <Product key={product.id} product={product} />
+        ))
+      )}
+    </div>
+  );
+};
+
+export default Products;

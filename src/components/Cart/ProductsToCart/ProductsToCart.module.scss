@@ -1,0 +1,178 @@
+.productsToCart {
+    position: relative;
+    display: flex;
+    width: 80vw;
+    border-top: 3px solid #d4cfcf;
+    padding-top: 10px;
+    margin-left: 2vw;
+    height: 17rem;
+    
+
+    &:last-child {
+        border-bottom: 3px solid #d4d4d4;
+    }
+
+    .image {
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 10rem;
+        
+        img  {
+            width: 10rem;
+            height: 15rem;
+            max-height: 100%;
+
+            object-fit: contain;
+            border-radius: 7px;
+        }
+    }
+    .productNameAndPrice {
+
+        margin-left: 1rem;
+        
+        .name {
+            h2 {
+                font-size: 1.5rem;
+                overflow-wrap: break-word;
+            }
+        }
+        .priceAndQuant {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 15rem;
+            width: 15rem;
+
+
+            .quant {
+                
+                display: flex;
+                align-items: center;
+                height: 3rem;
+
+                input {
+                    text-align: center;
+                    width: 2.5rem;
+                    padding: 5px 0;
+                    margin: 13px;
+                    font-weight: 600;
+                }
+
+                button {
+                    width: 30px;
+                    background-color: transparent;
+                    border: 2px solid black;
+                    border-radius: 999px;
+                    padding: 2.5px;
+                    transition: background-color .2s ease-in-out;
+
+                    &:hover {
+                        background-color: orange;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .subtotalAndExclude {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+
+        button {
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 999px;
+            background-color: #ffa6002f;
+            transition: background-color .2s ease-in;
+            width: 1.8rem;
+            margin: .3rem 1rem 0rem 0rem;
+            
+            &:hover {
+                background-color: #ffa60093;
+                cursor: pointer;
+            }
+        }
+
+        span {
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 0px 1rem 1rem 0px;
+        }
+    }
+}
+
+@media( max-width: 950px) {
+    .productsToCart {
+        margin-left: 3vw;
+        width: 97vw;
+
+        .subtotalAndExclude {
+            span {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media(max-width: 570px) {
+    .productsToCart {
+        margin-left: 3vw;
+        width: 97vw;
+
+        .image {
+            display: flex;
+            align-items: center;
+            img {
+                width: 7rem;
+                height: 10rem;
+
+            }
+        }
+        .productNameAndPrice {
+            margin: 5px;
+            .name {
+                h2 {
+                    font-size: 1.1rem;
+                }
+            }
+            .priceAndQuant {
+                height: 12rem;
+                width: auto;
+
+                .price {
+                    h3 {
+                        font-size: 1rem;
+                    }
+                }
+
+                .quant {
+                    input {
+                        width: 2rem;
+                        margin: 0 5px;
+                    }
+                    button {
+                        width: 20px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .subtotalAndExclude {
+            button {
+                width: 1.5rem;
+            }
+            span {
+                margin-left: 1rem;
+                padding: 0;
+                font-size: 1rem;
+            }
+        }
+    }
+}

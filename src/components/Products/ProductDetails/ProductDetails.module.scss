@@ -1,0 +1,139 @@
+@keyframes viewProductDetails {
+    0% {
+        transform: translateX(-70vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes hiddenProductDetails {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+.productDetails {
+    position: fixed;
+    display: flex;
+    top: 0;
+    width: 69vw;
+    height: 100vh;
+    padding-top: 88px;
+    background-color: white;
+    transition: padding 0.2s ease-in-out;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+
+
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: 90%;
+            max-width: 30rem;
+            max-height: 20rem;
+            border-radius: 7px;
+            object-fit: contain;
+        }
+
+        p {
+            line-height: 1.5rem;
+            margin-top: 1rem;
+            max-width: 80%;
+            margin-bottom: 2rem;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 1rem;
+            width: 100%;
+
+            span {
+                font-size: 1.3rem;
+                margin-right: 2rem;
+            }
+
+            button {
+                width: 13rem;
+                padding: 0.2rem 0;
+                font-size: 1.2rem;
+                font-weight: 600;
+
+                border-radius: 5px;
+                border: 2px solid black;
+                background-color: #ffb429;
+                transition: filter 0.2s ease;
+
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(90%);
+                }
+            }
+        }
+    }
+
+    .back {
+        position: absolute;
+        right: 0;
+
+        button {
+            border: none;
+            background: transparent;
+            transition: color .3s ease-in-out;
+
+            &:hover {
+                color: orange;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+
+.padding {
+    padding-top: 10px;
+}
+
+.transitionON {
+    animation: viewProductDetails 0.8s none 0s ease-out;
+}
+
+.transitionOFF {
+    animation: hiddenProductDetails 0.8s none 0s ease-in-out;
+}
+
+@media(max-width: 900px) {
+    .productDetails {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 488px) {
+    .productDetails {
+        .details {
+            div {
+                flex-direction: column;
+
+                span {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}

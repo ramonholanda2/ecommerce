@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-top: 2px solid #d4cfcf;
+    margin-top: 20px;
+
+    a {
+        color: black;
+        text-decoration: underline;
+        transition: .2s ease-in;
+        &:hover {
+            color: rgb(158, 103, 0);
+            text-decoration: none;
+        }
+    }
+}

@@ -13,7 +13,12 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export const db = firebaseApp.firestore();
 export const auth = firebaseApp.auth();
-    
+
 export function loginWithGoogle() {
-    auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
+    auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
 }
+
+export function loginWithFacebook() {
+    auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+}
+
