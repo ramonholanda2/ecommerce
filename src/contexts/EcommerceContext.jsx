@@ -162,17 +162,7 @@ export const EcommerceContextProvider = ({ children }) => {
         }))
       );
     });
-
-    // pega dados dos produtos
-    db.collection("products").onSnapshot((snapshot) => {
-      setProducts(
-        snapshot.docs.map((doc) => ({
-          data: doc.data(),
-          id: doc.id,
-        }))
-      );
-    });
-
+    
   }, [])
   
   useEffect(() => {
